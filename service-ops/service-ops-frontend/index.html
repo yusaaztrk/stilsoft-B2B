@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      TARAYICI CEVIRISI KAPALI (2026-08-24, kullanici bildirimi: "bazi bilgisayarlarda
+      uygulama kapaniyor").
+
+      Konsoldaki hata: `NotFoundError: Failed to execute 'removeChild' on 'Node'`.
+      Sebebi: sayfa `lang="en"` diyordu ama icerik TURKCE. Chrome/Edge bunu gorunce sayfayi
+      cevirmeye kalkiyor; ceviri metin dugumlerini kendi olusturdugu dugumlerle DEGISTIRIYOR
+      ve React daha sonra kaldirmak istedigi dugumu bulamayip uygulamayi dusuruyor.
+
+      Bazi bilgisayarlarda olup bazilarinda olmamasinin sebebi de bu: tarayicinin ceviri
+      ayarina ("bu dili her zaman cevir") bagli.
+
+      Iki onlem birlikte: dil dogru bildiriliyor (tr) ve ceviri acikca reddediliyor.
+    -->
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>STILSOFT Servis</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

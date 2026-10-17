@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="20" fill="#F8FAFC"/>
+    <!-- Vantilatör / Ev Gereci -->
+    <circle cx="50" cy="38" r="20" fill="#F1F5F9" stroke="#334155" stroke-width="2"/>
+    <circle cx="50" cy="38" r="4" fill="#C8102E"/>
+    <path d="M50 38C44 32 42 24 50 22C58 24 56 32 50 38Z" fill="#94A3B8"/>
+    <path d="M50 38C56 44 64 46 66 38C64 30 56 32 50 38Z" fill="#94A3B8"/>
+    <path d="M50 38C44 44 36 42 34 50C36 58 44 56 50 38Z" fill="#94A3B8"/>
+    <path d="M50 58V78" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+    <path d="M34 82H66" stroke="#334155" stroke-width="3.5" stroke-linecap="round"/>
+  </svg>

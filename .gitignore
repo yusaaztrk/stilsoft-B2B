@@ -1,0 +1,82 @@
+# .NET
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# Kullanici yuklemeleri (urun/fatura gorselleri) depoya girmez; logolar ve vitrin gorselleri girer
+**/wwwroot/uploads/
+
+# Videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.wmv
+
+
+# Android / Gradle cache
+**/.gradle/
+**/build/
+**/.cxx/
+**/.externalNativeBuild/
+**/.idea/
+
+# Native build files
+**/.ninja_*
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+
+# Logs / cache / generated
+*.log
+*.lock
+*.bin
+
+# Yerel servis anahtarları (asla depoya girmez)
+appsettings.Local.json
+
+# Publish and build artifacts
+_publish/
+artifacts/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# Testing, reports and temp files
+.playwright/
+playwright-report/
+test-results/
+enc_test.txt
+
+# Next.js build output
+.next/
+
+# Root diagnostic and audit SQL scripts
+/*.sql
+
+# Yerel ortam dosyalari
+.env.local
+**/.env.local
+.claude/settings.local.json
+
+# Asistan lokal deneme girişi (2026-10-07) — yalnız bu makine
+asistan/LOKAL-GIRIS.md

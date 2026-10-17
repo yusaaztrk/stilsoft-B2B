@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  email-db:
+    image: postgres:16-alpine
+    container_name: b2b-email-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: email_db
+      POSTGRES_USER: email_user
+      POSTGRES_PASSWORD: email_pass
+    ports:
+      - "5437:5432"
+    volumes:
+      - email_db_data:/var/lib/postgresql/data
+
+  email-rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: b2b-email-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - email_rabbitmq_data:/var/lib/rabbitmq
+
+  maildev:
+    image: maildev/maildev:latest
+    container_name: b2b-email-maildev
+    restart: unless-stopped
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+
+  email-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: b2b-email-service
+    restart: unless-stopped
+    ports:
+      - "5250:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=email-db;Port=5432;Database=email_db;Username=email_user;Password=email_pass;
+      - RabbitMq__Host=email-rabbitmq
+      - RabbitMq__Port=5672
+      - RabbitMq__Username=guest
+      - RabbitMq__Password=guest
+      - Encryption__SecretKey=B2B_ERP_EmailService_Production_Secret_Key_32_Bytes_Long!
+      - Authentication__ApiKey=B2B_ERP_EmailService_Default_Secret_API_Key_123!
+      # ─── REAL GMAIL SMTP CONFIGURATION ───
+      # Gerçek e-posta gönderimi için burayı düzenleyebilirsiniz:
+      # - Smtp__Host=smtp.gmail.com
+      # - Smtp__Port=587
+      # - Smtp__EnableSsl=true
+      - Smtp__Host=smtp.gmail.com
+      - Smtp__Port=587
+      - Smtp__Username=emin.oztok1@gmail.com
+      - Smtp__Password=uxpf gopg bkcp kkux
+      - Smtp__EnableSsl=true
+      - Smtp__SenderName=B2B ERP E-Ticaret
+      - Smtp__SenderEmail=emin.oztok1@gmail.com
+    depends_on:
+      - email-db
+      - email-rabbitmq
+      - maildev
+
+volumes:
+  email_db_data:
+  email_rabbitmq_data:

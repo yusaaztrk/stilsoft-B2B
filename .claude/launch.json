@@ -1,0 +1,132 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "erp-api",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\backend\\B2B.Erp.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet run --no-launch-profile --urls http://0.0.0.0:5200"
+      ],
+      "port": 5200
+    },
+    {
+      "name": "erp-api-local",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\backend\\B2B.Erp.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet build -nologo -v q -p:OutDir=C:\\Users\\Admin\\Desktop\\B2B-ERP\\backend\\B2B.Erp.Api\\bin_local\\ && dotnet bin_local\\B2B.Erp.Api.dll --urls http://0.0.0.0:5200"
+      ],
+      "port": 5200
+    },
+    {
+      "name": "b2b-frontend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\frontend && set VITE_API_BASE_URL=http://localhost:5200&& npx vite --port 5174 --strictPort"
+      ],
+      "port": 5174
+    },
+    {
+      "name": "b2b-frontend-5178",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\frontend && set VITE_API_BASE_URL=http://localhost:5200&& npx vite --port 5178 --strictPort"
+      ],
+      "port": 5178
+    },
+    {
+      "name": "serviceops-api",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\service-ops\\service-ops-api\\bin\\Debug\\net8.0 && set ASPNETCORE_ENVIRONMENT=Development&& C:\\Users\\Admin\\Desktop\\B2B-ERP\\service-ops\\service-ops-api\\bin\\Debug\\net8.0\\ServiceOps.Api.exe --urls http://0.0.0.0:5137"
+      ],
+      "port": 5137
+    },
+    {
+      "name": "serviceops-frontend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\service-ops\\service-ops-frontend && npx vite --port 5175 --strictPort"
+      ],
+      "port": 5175
+    },
+    {
+      "name": "employee-api",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\employee-service\\Employee.Service.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet run --no-launch-profile --urls http://0.0.0.0:5108"
+      ],
+      "port": 5108
+    },
+    {
+      "name": "employee-portal",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\employee-service\\employee-portal && npx vite --port 5176 --strictPort"
+      ],
+      "port": 5176
+    },
+    {
+      "name": "shop-api",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\shop\\Shop.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet run --no-launch-profile --urls http://0.0.0.0:5150"
+      ],
+      "port": 5150
+    },
+    {
+      "name": "storefront",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\shop\\storefront && npx next dev -p 3000"
+      ],
+      "port": 3000,
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "asistan-api",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\asistan\\Asistan.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet run --no-launch-profile --urls http://0.0.0.0:5160"
+      ],
+      "port": 5160
+    },
+    {
+      "name": "asistan-frontend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\asistan\\asistan-frontend && npx vite --port 5177 --strictPort"
+      ],
+      "port": 5177
+    },
+    {
+      "name": "employee-api-local",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\employee-service\\Employee.Service.Api && set ASPNETCORE_ENVIRONMENT=Development&& dotnet build -nologo -v q -p:OutDir=C:\\Users\\Admin\\Desktop\\B2B-ERP\\employee-service\\Employee.Service.Api\\bin_local\\ && dotnet bin_local\\Employee.Service.Api.dll --urls http://0.0.0.0:5118"
+      ],
+      "port": 5118
+    },
+    {
+      "name": "employee-portal-local",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\Admin\\Desktop\\B2B-ERP\\employee-service\\employee-portal && set VITE_API_BASE_URL=http://localhost:5118&& npx vite --port 5186 --strictPort"
+      ],
+      "port": 5186
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <!--
+    Burada "Configurations\*.cs" toptan hariç tutulup dosyalar tek tek geri ekleniyordu.
+    Sebebi ana API'den kopyalanan ve bu projede karşılığı olmayan (Customer, Invoice,
+    Product ...) 58 yapılandırma dosyasıydı; onlar derlemeyi kırdığı için liste elle
+    tutuluyordu. Bu düzen sessiz bir tuzaktı: klasöre yeni bir yapılandırma eklendiğinde
+    listeye yazılmadığı sürece DERLEMEYE HİÇ GİRMİYOR, EF de onu uygulamıyordu
+    (WorkScheduleSetting/Holiday tam olarak bu yüzden devre dışı kalmıştı).
+
+    Artık kopya dosyalar silindi ve varsayılan dosya toplama kullanılıyor: klasöre eklenen
+    her yapılandırma otomatik derlenir.
+  -->
+
+</Project>

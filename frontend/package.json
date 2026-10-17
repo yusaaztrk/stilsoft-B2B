@@ -1,0 +1,44 @@
+{
+  "name": "b2b-erp-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@mantine/core": "file:vendor/packages/mantine-core-6.0.22.tgz",
+    "@mantine/dates": "file:vendor/packages/mantine-dates-6.0.22.tgz",
+    "@mantine/hooks": "file:vendor/packages/mantine-hooks-6.0.22.tgz",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@tabler/icons-react": "file:vendor/packages/tabler-icons-react-3.44.0.tgz",
+    "@tanstack/react-table": "file:vendor/packages/tanstack-react-table-8.10.6.tgz",
+    "@tanstack/react-virtual": "file:vendor/packages/tanstack-react-virtual-3.0.0-beta.63.tgz",
+    "exceljs": "^4.4.0",
+    "framer-motion": "^12.26.2",
+    "jsbarcode": "^3.12.3",
+    "lucide-react": "^0.395.0",
+    "mantine-react-table": "file:vendor/packages/mantine-react-table-1.3.4.tgz",
+    "qrcode": "^1.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/jsbarcode": "^3.11.4",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0"
+  }
+}

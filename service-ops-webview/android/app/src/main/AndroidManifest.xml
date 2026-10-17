@@ -1,0 +1,131 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      Konum. ACCESS_BACKGROUND_LOCATION uygulama kapalıyken de konumun akması için gerekli;
+      izni kullanıcı ayrıca onaylıyor (Android 10+ ön plan izninden sonra ayrı diyalog).
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!--
+      Ön plan servisi: arka planda konum almanın Android'deki tek yasal yolu. Kalıcı bildirim
+      olmadan sistem konum erişimini birkaç dakika içinde kesiyor.
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Bildirim izni Android 13'ten (API 33) beri kullanıcıdan ayrıca isteniyor. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+      Telefon açılınca takibin kendiliğinden başlaması için. Şarjı biten telefon kapanıp geri
+      açıldığında, kullanıcı uygulamayı ELLE açmadıkça konum akmıyordu.
+    -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--
+      Pil optimizasyonu muafiyeti. Sistem, optimize edilen uygulamanın ön plan servisini bir
+      süre sonra öldürüyor (Xiaomi/Samsung/Huawei çok daha agresif) ve konum sessizce kesiliyor.
+      İzin yalnızca DİYALOĞU açma hakkı verir; muafiyeti kullanıcı onaylar.
+    -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Servis fişine fotoğraf ekleme: WebView dosya seçicisi kamerayı buradan açıyor. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--
+      DÜZ METİN HTTP — açık, ve BİLEREK manifeste yazılı.
+
+      Uygulama yerel ağdaki `http://192.168.x.x:5173` adresini açıyor. Android bunu varsayılan
+      olarak reddediyor ve WebView hiçbir hata göstermeden BOŞ/HATA ekranı veriyor; dışarıdan
+      "sunucuya ulaşılamıyor" gibi görünüyor ama paket makineye hiç çıkmıyor.
+
+      Değer eskiden `${usesCleartextTraffic}` yer tutucusuydu ve release'te `false` geliyordu.
+      `app/build.gradle`'daki release bloğuna `manifestPlaceholders` yazmak İŞE YARAMIYOR:
+      React Native gradle eklentisi aynı yer tutucuyu `finalizeDsl` içinde set ediyor, o da
+      build.gradle'daki her şeyden SONRA çalışıp değeri geri `false` yapıyor. Bu yüzden
+      doğrudan buraya yazıldı.
+
+      SUNUCU HTTPS'E GEÇTİĞİNDE bu satır `false` yapılmalı.
+    -->
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme"
+      android:usesCleartextTraffic="true"
+      android:supportsRtl="true">
+      <!--
+        YORUM ETİKETİN İÇİNE YAZILAMAZ. Bu açıklama bir süre `<activity ...>` etiketinin
+        öznitelikleri ARASINDA duruyordu; XML'de öznitelik listesinin içine yorum konamaz ve
+        manifest o günden beri ayrıştırılamıyordu. Sonucu: `assembleRelease`
+        `ManifestMerger2$MergeFailureException` ile düşüyor, yani APK hiç üretilemiyordu
+        (BootReceiver/BootTaskService'in "yazıldı ama derlenmedi" kalmasının sebebi de buydu).
+
+        configChanges GENİŞLETİLDİ: listelenmeyen her değişimde Android Activity'yi YENİDEN
+        KURUYOR, WebView de baştan yükleniyor — doldurulmuş form ve seçilen fotoğraf gidiyor.
+        Kameradan/dosya seçiciden dönerken yoğunluk ve yazı tipi ölçeği değişimleri bu yolla
+        sayfayı sıfırlayabiliyordu.
+      -->
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|density|fontScale|navigation|locale|layoutDirection"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <!-- Kalıcı bildirime dokunulunca uygulamanın açılması için. -->
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="serviceops" />
+        </intent-filter>
+      </activity>
+
+      <!--
+        Ön plan servisinin türü BİLDİRİLMEK ZORUNDA (Android 14+). Eksikse servis
+        `MissingForegroundServiceTypeException` ile açılışta çöker.
+      -->
+      <service
+        android:name="com.asterinet.react.bgactions.RNBackgroundActionsTask"
+        android:foregroundServiceType="location"
+        android:exported="false" />
+
+      <!--
+        Açılış yayınını dinleyen alıcı ve onun tetiklediği headless JS servisi.
+        `exported="true"` ŞART: yayını gönderen sistemdir, uygulama değil.
+        QUICKBOOT_POWERON bazı üreticilerin hızlı açılışta BOOT_COMPLETED yerine gönderdiği yayın.
+      -->
+      <receiver
+        android:name=".BootReceiver"
+        android:enabled="true"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+        </intent-filter>
+      </receiver>
+
+      <service
+        android:name=".BootTaskService"
+        android:foregroundServiceType="location"
+        android:exported="false" />
+
+      <!-- Bildirimlerin varsayılan kanalı; sunucudaki channel_id ile aynı olmalı. -->
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="job-assignments" />
+    </application>
+</manifest>

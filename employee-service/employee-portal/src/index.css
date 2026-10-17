@@ -1,0 +1,176 @@
+/* Fontlar index.html icindeki <link> ile yukleniyor. Burada @import ile ikinci kez
+   yuklenmesi hem ayni dosyalari iki kez indiriyor hem de CSS @import render'i blokluyordu. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading-handwriting {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+}
+
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1a1a1a;
+    background-color: #f8f7f4;
+  }
+
+  * {
+    border-color: #eae6dd;
+  }
+}
+
+@layer components {
+  /* Editorial Inputs */
+  .input-base {
+    @apply w-full h-[38px] px-3.5 text-xs rounded-lg border bg-white text-[#1a1a1a] border-[#eae6dd] transition-all duration-150;
+    @apply focus:outline-none focus:ring-1 focus:ring-[#c5a059] focus:border-[#c5a059];
+    @apply placeholder:text-[#a8a29e] font-normal;
+  }
+
+  .input-dark {
+    @apply w-full h-[40px] px-3.5 text-xs rounded-lg border bg-[#1a1a1a] text-white border-neutral-800 transition-all duration-150;
+    @apply focus:outline-none focus:ring-1 focus:ring-[#c5a059] focus:border-[#c5a059];
+    @apply placeholder:text-neutral-500 font-normal;
+  }
+
+  /* Editorial Buttons */
+  .btn-editorial {
+    @apply h-[34px] px-3.5 rounded text-xs font-normal border border-[#dcd8cd] hover:border-[#c5a059] text-[#7a6b58] hover:text-[#44301d] bg-white hover:bg-[#faf7f2] transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-editorial-primary {
+    @apply h-[34px] px-4 rounded text-xs font-medium bg-[#141414] hover:bg-[#262626] text-white border border-[#141414] transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-editorial-bronze {
+    @apply h-[34px] px-4 rounded text-xs font-medium border border-[#c5a059] text-[#8c6538] hover:bg-[#faf7f2] bg-white transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-primary {
+    @apply h-[34px] px-4 rounded text-xs font-medium bg-[#141414] hover:bg-[#262626] text-white border border-[#141414] transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-secondary {
+    @apply h-[34px] px-3.5 rounded text-xs font-normal border border-[#dcd8cd] hover:border-[#c5a059] text-[#7a6b58] hover:text-[#44301d] bg-white hover:bg-[#faf7f2] transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-orange {
+    @apply h-[34px] px-4 rounded text-xs font-medium border border-[#c5a059] text-[#8c6538] hover:bg-[#faf7f2] bg-white transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-navy {
+    @apply h-[34px] px-4 rounded text-xs font-medium bg-[#141414] hover:bg-[#262626] text-white border border-[#141414] transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-danger {
+    @apply h-[34px] px-3.5 rounded text-xs font-normal border border-rose-200 text-rose-700 hover:bg-rose-50 bg-white transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .btn-success {
+    @apply h-[34px] px-3.5 rounded text-xs font-normal border border-emerald-300 text-emerald-800 hover:bg-emerald-50 bg-white transition-all duration-150 inline-flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  /* Editorial Cards */
+  .card {
+    @apply bg-white rounded-xl border border-[#eae6dd] transition-all duration-150;
+  }
+
+  .card-hover {
+    @apply hover:border-[#d7c09e];
+  }
+
+  .card-navy {
+    @apply bg-[#141414] text-white rounded-xl border border-neutral-800;
+  }
+
+  .card-orange {
+    @apply bg-white text-[#1a1a1a] rounded-xl border border-[#eae6dd];
+  }
+
+  /* Editorial Badges & Outlined Pills */
+  .badge-editorial {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-[#d6cbb8] text-[#8c6d44] bg-[#faf7f2]/80;
+  }
+
+  .badge-orange {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-[#d6cbb8] text-[#8c6d44] bg-[#faf7f2]/80;
+  }
+
+  .badge-navy {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-neutral-300 text-neutral-700 bg-neutral-50;
+  }
+
+  .badge-emerald {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-emerald-200 text-emerald-800 bg-emerald-50/60;
+  }
+
+  .badge-amber {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-[#d6cbb8] text-[#8c6d44] bg-[#faf7f2]/80;
+  }
+
+  .badge-rose {
+    @apply px-2 py-0.5 rounded text-[10px] font-medium tracking-widest uppercase border border-rose-200 text-rose-700 bg-rose-50/60;
+  }
+}
+
+@layer utilities {
+  .font-serif-heading {
+    font-family: 'Newsreader', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .shadow-navy-glow {
+    box-shadow: none;
+  }
+
+  .shadow-orange-glow {
+    box-shadow: none;
+  }
+
+  .scrollbar-thin-dark {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(184, 142, 83, 0.3) transparent;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar-thumb {
+    background: rgba(184, 142, 83, 0.3);
+    border-radius: 4px;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+

@@ -1,0 +1,65 @@
+services:
+  # ─── B2B ERP Database ───
+  db:
+    image: postgres:16
+    container_name: b2b-erp-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: b2b_erp
+      POSTGRES_USER: b2b
+      POSTGRES_PASSWORD: b2b
+    ports:
+      - "5434:5432"
+    volumes:
+      - b2b_erp_db:/var/lib/postgresql/data
+
+  face-service:
+    build: ./face-service
+    container_name: b2b-face-service
+    restart: unless-stopped
+    ports:
+      - "5300:5300"
+
+  # ─── Money Service Database ───
+  money-db:
+    image: postgres:16
+    container_name: money-service-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: money_service
+      POSTGRES_USER: money
+      POSTGRES_PASSWORD: money
+    ports:
+      - "5435:5432"
+    volumes:
+      - money_service_pg:/var/lib/postgresql/data
+
+  # ─── Money Service Redis ───
+  money-redis:
+    image: redis:7
+    container_name: money-service-redis
+    restart: unless-stopped
+    ports:
+      - "6381:6379"
+    volumes:
+      - money_service_redis:/data
+
+  # ─── E-Ticaret Database ───
+  eticaret_db:
+    image: postgres:16
+    container_name: eticaret-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: eticaret
+      POSTGRES_USER: eticaret
+      POSTGRES_PASSWORD: eticaret
+    ports:
+      - "5436:5432"
+    volumes:
+      - eticaret_db:/var/lib/postgresql/data
+
+volumes:
+  b2b_erp_db:
+  money_service_pg:
+  money_service_redis:
+  eticaret_db:

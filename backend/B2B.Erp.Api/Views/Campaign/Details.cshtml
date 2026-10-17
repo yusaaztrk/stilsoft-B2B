@@ -1,0 +1,167 @@
+@model CampaignDetailsViewModel
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Campaign Details";
+
+    // Arayüzün adresi yapılandırmadan gelir. Sabit "http://localhost:5173" yazılıydı: canlıda
+    // bu bağlantılar kullanıcının KENDİ makinesine gidiyor ve "bağlantı reddedildi" veriyordu.
+    var frontendBaseUrl = (Configuration["App:FrontendBaseUrl"] ?? "http://localhost:5173").TrimEnd('/');
+}
+
+@section TopActions {
+    <a class="btn btn-sm btn-primary" href="@($"{frontendBaseUrl}/invoice/kampanya-tanim?editCampaignId={Model.Id}")" target="_blank" rel="noopener noreferrer">Düzenle (React)</a>
+    <a class="btn btn-sm btn-outline-secondary" href="@($"{frontendBaseUrl}/invoice/kampanya-tanim")" target="_blank" rel="noopener noreferrer">React Ana Sayfa</a>
+}
+
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div>
+        <div class="text-muted kv">Campaign</div>
+        <h3 class="mb-1">@Model.Name</h3>
+        <div class="text-muted kv mono">@Model.Id</div>
+    </div>
+    <div class="text-end">
+        <div class="text-muted kv">Summary</div>
+        <div class="kvv">@Model.ConditionSummary</div>
+        <div class="kvv">@Model.ActionSummary</div>
+        <div class="kvv">@Model.TargetSummary</div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-header bg-white">
+        <div class="fw-semibold">Genel Bilgiler</div>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="kv">CampaignName</div>
+                <div class="kvv">@Model.Name</div>
+            </div>
+            <div class="col-md-3">
+                <div class="kv">StartDate</div>
+                <div class="kvv">@(Model.IsIndefinite ? "Süresiz" : (Model.StartDate.HasValue ? Model.StartDate.Value.ToString("yyyy-MM-dd") : "-"))</div>
+            </div>
+            <div class="col-md-3">
+                <div class="kv">EndDate</div>
+                <div class="kvv">@(Model.IsIndefinite ? "Süresiz" : (Model.EndDate.HasValue ? Model.EndDate.Value.ToString("yyyy-MM-dd") : "-"))</div>
+            </div>
+            <div class="col-md-2">
+                <div class="kv">Priority</div>
+                <div class="kvv">@Model.Priority</div>
+            </div>
+            <div class="col-md-2">
+                <div class="kv">IsActive</div>
+                <span class="badge @(Model.IsActive ? "text-bg-success" : "text-bg-secondary")">@(Model.IsActive ? "Active" : "Passive")</span>
+            </div>
+            <div class="col-md-2">
+                <div class="kv">StopNext</div>
+                <span class="badge @(Model.StopNext ? "text-bg-warning" : "text-bg-light")">@(Model.StopNext ? "Yes" : "No")</span>
+            </div>
+            <div class="col-md-6">
+                <div class="kv">Description</div>
+                <div class="kvv">@(string.IsNullOrWhiteSpace(Model.Description) ? "-" : Model.Description)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="fw-semibold">EĞER (Conditions)</div>
+        <div class="text-muted kv">@Model.Conditions.Count row(s)</div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle mb-0">
+                <thead>
+                <tr>
+                    <th>ConditionType</th>
+                    <th>Operator</th>
+                    <th>Value</th>
+                    <th>TargetId</th>
+                    <th>Summary</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var c in Model.Conditions)
+                {
+                    <tr>
+                        <td class="text-nowrap">@c.ConditionType</td>
+                        <td class="text-nowrap">@c.Operator</td>
+                        <td class="text-nowrap">@c.Value</td>
+                        <td class="mono">@(string.IsNullOrWhiteSpace(c.TargetId) ? "-" : c.TargetId)</td>
+                        <td>@c.DisplayText</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="fw-semibold">O HALDE (Actions)</div>
+        <div class="text-muted kv">@Model.Actions.Count row(s)</div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle mb-0">
+                <thead>
+                <tr>
+                    <th>ActionType</th>
+                    <th>Value</th>
+                    <th>Quantity</th>
+                    <th>TargetProductId</th>
+                    <th>TargetPriceGroupId</th>
+                    <th>Summary</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var a in Model.Actions)
+                {
+                    <tr>
+                        <td class="text-nowrap">@a.ActionType</td>
+                        <td class="text-nowrap">@a.Value</td>
+                        <td class="text-nowrap">@a.Quantity</td>
+                        <td class="mono">@(a.TargetProductId.HasValue ? a.TargetProductId.Value.ToString() : "-")</td>
+                        <td class="mono">@(a.TargetPriceGroupId.HasValue ? a.TargetPriceGroupId.Value.ToString() : "-")</td>
+                        <td>@a.DisplayText</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="fw-semibold">Target</div>
+        <div class="text-muted kv">@Model.Targets.Count row(s)</div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle mb-0">
+                <thead>
+                <tr>
+                    <th>TargetType</th>
+                    <th>TargetId</th>
+                    <th>Summary</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var t in Model.Targets)
+                {
+                    <tr>
+                        <td class="text-nowrap">@t.TargetType</td>
+                        <td class="mono">@(string.IsNullOrWhiteSpace(t.TargetId) ? "-" : t.TargetId)</td>
+                        <td>@t.DisplayText</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

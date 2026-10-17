@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  #root {
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus styles */
+  :focus-visible {
+    outline: 2px solid #b5000b;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(22, 163, 74, 0.22);
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  /* Material Symbols base */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a1a1aa;
+  }
+}
+
+@layer utilities {
+  /* Animate in */
+  .animate-in {
+    animation: animateIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Fade in up */
+  .animate-fade-up {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in from right */
+  .animate-slide-right {
+    animation: slideRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes slideRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Pulse glow for badges */
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(181, 0, 11, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(181, 0, 11, 0);
+    }
+  }
+  
+  /* Hide scrollbars */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Premium Springy Modal Animation */
+  .animate-modal-spring {
+    animation: modalSpring 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes modalSpring {
+    from {
+      opacity: 0;
+      transform: scale(0.92) translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Ambient glow bar at the top of the card */
+  .animated-glow-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #df0000, #ff5a1f, #ffb400, #df0000);
+    background-size: 300% 100%;
+    animation: borderGlow 4s linear infinite;
+    z-index: 20;
+  }
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+
+  /* Floating Ambient Glow Background Circles */
+  .ambient-glow-circle-1 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(223, 0, 0, 0.08) 0%, rgba(223, 0, 0, 0) 70%);
+    filter: blur(15px);
+    top: 15%;
+    left: -40px;
+    animation: floatCircle1 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ambient-glow-circle-2 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(255, 180, 0, 0.06) 0%, rgba(255, 180, 0, 0) 70%);
+    filter: blur(15px);
+    bottom: 15%;
+    right: -40px;
+    animation: floatCircle2 15s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes floatCircle1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 40px) scale(1.15); }
+  }
+  @keyframes floatCircle2 {
+    0% { transform: translate(0, 0) scale(1.15); }
+    100% { transform: translate(-30px, -40px) scale(0.85); }
+  }
+}
+
+/* Disable spin buttons for inputs of type number globally */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

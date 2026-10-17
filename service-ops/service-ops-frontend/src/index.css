@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-base {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+}
+
+/*
+  MOBİL / WEBVIEW TEMELİ.
+
+  Uygulama ağırlıklı olarak bir React Native WebView'ün içinde, 360–430px genişlikte
+  kullanılıyor. Aşağıdakiler tek tek sayfalara yama yazmak yerine sorunun kaynağını kapatıyor.
+*/
+
+:root {
+  /* Sabit üst başlığın yüksekliği. Tek yerde: yapışkan alt şeritler ve içerik boşluğu
+     buradan besleniyor, üç ayrı dosyaya 64px yazılmıyor. */
+  --app-header-h: 64px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  /*
+    Yatay taşma SAKLANMIYOR, kaynağı aşağıda kapatılıyor (max-width kuralları).
+    Bu satır yalnızca son emniyet: bir bileşen yine de taşarsa sayfa sağa sola oynamasın,
+    çünkü WebView'de yatay kayma dikey kaydırmayı da tutukluyor.
+  */
+  overflow-x: hidden;
+  /* Aşırı kaydırmada gri arka planın görünmesini engeller (WebView'de belirgin). */
+  overscroll-behavior-y: none;
+}
+
+/*
+  TAŞMANIN GERÇEK KAYNAKLARI.
+
+  Dar ekranda satırı genişleten şey neredeyse her zaman kırılamayan bir içerik: ölçüsü
+  yazılmamış bir görsel, IBAN/stok kodu gibi boşluksuz uzun bir metin, ya da <pre>.
+  Kutuyu kısıtlamak yerine içeriği kısıtlıyoruz.
+*/
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+/*
+  İKONLAR KÜÇÜLMEZ (2026-09-27).
+
+  Yukarıdaki `svg { max-width: 100% }` ikonları da yakalıyordu: dar sütunda (1366px ve altı
+  ekranlar) düğme flex içinde daralınca ikon düğmenin kalan içine göre 0px'e iniyordu —
+  Aksiyon sütunundaki detay/sil ikonları ve planlamadaki aç/kapa oku kayboluyordu (ölçüldü:
+  ikon 0px, düğme 20px). İkon sabit ölçülü bir işarettir; taşma koruması ona gerekmez.
+*/
+svg.lucide,
+button svg,
+[role='button'] svg {
+  max-width: none;
+  flex-shrink: 0;
+}
+
+/* Tablo hücresindeki düğmeler sütun daralınca ezilmez; sütun gerekirse genişler. */
+td button {
+  flex-shrink: 0;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    /* 16px altındaki yazı iOS'ta odaklanınca sayfayı yakınlaştırıyor ve düzen kayıyor. */
+    font-size: 16px;
+  }
+
+  /*
+    Boşluksuz uzun metinler (IBAN, stok kodu, e-posta, dosya adı) satırı ekranın dışına
+    itiyordu.
+
+    DEĞER `break-word`, `anywhere` DEĞİL. İkisi de uzun kelimeyi kırar ama `anywhere`
+    ELEMANIN MIN-CONTENT GENİŞLİĞİNİ de düşürüyor: tarayıcı "bu hücre tek harfe kadar
+    daralabilir" sayıp tabloyu daraltıyordu ve başlıklar dikey harf sütununa dönüyordu
+    (SIRA → S/I/R/A, Excel → Ex/ce/l). Ekranda görüldü, bir kez yaşandı.
+
+    `break-word` yalnızca satır kırma anında iş görür, tablo/flex ölçümüne karışmaz.
+    Tablo hücreleri (td/th) listede YOK: kolon genişlikleri oradan hesaplanıyor.
+  */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  label {
+    overflow-wrap: break-word;
+  }
+
+  /*
+    Dokunma hedefi.
+
+    BÜTÜN düğmelere 40px taban vermek DENENDİ ve GERİ ALINDI: mobil alt sekme şeridindeki
+    chip'ler 28px'ten 40px'e çıkınca şerit 50px'ten 62px'e büyüdü ve üst başlıkla içerik
+    arasında göze batan bir boşluk oluştu (ekranda ölçüldü). Geniş bir chip parmakla zaten
+    rahat tutuluyor — dokunma hedefi ALAN meselesi, yalnızca yükseklik değil.
+
+    Taban bu yüzden sadece GERÇEKTEN küçük olanlara veriliyor (aşağıda): içinde tek bir ikon
+    olan ya da boş düğmeler. Ekranda dar çıkanlar da tam olarak bunlardı.
+  */
+  button,
+  [role='button'],
+  a {
+    /* Çift dokunma yakınlaştırmasını ve 300ms gecikmeyi kapatır; boyuta DOKUNMAZ. */
+    touch-action: manipulation;
+  }
+
+  /*
+    DÜĞME GİBİ DAVRANAN BAĞLANTILAR.
+
+    Rapor sayfalarındaki sekme/geri bağlantıları <button> değil <a>: yukarıdaki kural onları
+    yakalamıyordu ve 29px yükseklikte kalıyorlardı (ölçüldü). Seçici `rounded` sınıfı olanlara
+    bakıyor — yuvarlatılmış zeminli bir bağlantı bir kontroldür; paragraf içindeki düz metin
+    bağlantılarında o sınıf olmaz, onlar 40px'e şişirilmemeli.
+  */
+  a[class*='rounded']:not(table a) {
+    min-height: 40px;
+    align-items: center;
+    touch-action: manipulation;
+  }
+
+  /* Yalnız ikon taşıyan (ya da boş) düğmeler: gerçekten küçük olanlar bunlar. */
+  button:not(table button):empty,
+  button:not(table button):has(> svg:only-child) {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  /*
+    AKSİYON SATIRLARI DAR EKRANDA SARSIN.
+
+    Sayfalarda 60'tan fazla "flex ... justify-end" düğme satırı var ve hiçbirinde `flex-wrap`
+    yok: iki-üç düğme yan yana sığmayınca sonuncusu ekranın dışına taşıyordu. Altmış yere ayrı
+    sınıf yazmak yerine kural burada.
+
+    Seçici DAR: yalnızca DOĞRUDAN en az iki düğme çocuğu olan flex kutuları. Tek düğmeli
+    başlık satırları ve "ikon + başlık" düzenleri kapsam dışı, o yüzden mevcut görünüm
+    bozulmuyor. `flex-wrap` zaten ancak içerik sığmadığında devreye giriyor: sığan satır
+    bugünkü hâliyle aynı kalır.
+  */
+  .flex:has(> button:nth-of-type(2)),
+  .inline-flex:has(> button:nth-of-type(2)) {
+    flex-wrap: wrap;
+  }
+
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .overflow-x-auto > table {
+    min-width: 760px;
+  }
+
+  /*
+    Elde yazılmış listeler için yığın düzeni.
+
+    Sayfaların bir kısmı AppDataTable'dan geçmiyor, kendi <table>'ını basıyor; onlarda kart
+    görünümü yok ve telefonda 760px genişliğinde yatay kaydırılan bir tablo çıkıyordu. Tabloya
+    `mobile-stack`, hücrelere `data-label` verilince satır 767px altında alt alta etiketli bir
+    karta dönüşür — işaretlemeyen tablolar hiç etkilenmez.
+  */
+  /*
+    YIĞIN KART DÜZENİ.
+
+    Önce "etiket %38 | değer" iki sütunlu yazıldı ve 320px'te işe yaramadı: etikete 122px
+    gidince değere 170px kalıyor, ürün adı dört satıra bölünüyor, değerler sağa yaslandığı
+    için de kart tırtıklı görünüyordu.
+
+    Yeni düzen: etiket SABİT dar bir sütun (84px), değer kalan alanın tamamı ve SOLA yaslı.
+    Sayfa kabuğu + kart + tablo üç kat padding yığıyordu; yığın modunda hepsi kırpıldı.
+  */
+  table.mobile-stack {
+    min-width: 0 !important;
+    /* Tablo kendi kenar boşluğunu üretmesin; kart zaten bir kutu. */
+    margin: 0 !important;
+  }
+
+  table.mobile-stack thead {
+    display: none;
+  }
+
+  table.mobile-stack,
+  table.mobile-stack tbody,
+  table.mobile-stack tr,
+  table.mobile-stack td {
+    display: block;
+    width: 100%;
+  }
+
+  table.mobile-stack tr {
+    width: auto;
+    /* Kartlar arası tek boşluk; yanlarda boşluk YOK — dar ekranda her piksel değerli. */
+    margin: 0 0 0.5rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+
+  table.mobile-stack tr:last-child {
+    margin-bottom: 0;
+  }
+
+  table.mobile-stack td {
+    display: flex;
+    align-items: baseline;
+    /* SOLA yaslı: `space-between` değeri sağa itip kartı tırtıklı gösteriyordu. */
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.25rem 0 !important;
+    border: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  table.mobile-stack td::before {
+    content: attr(data-label);
+    /* SABİT dar sütun. Yüzde vermek uzun etiketlerde değeri eziyordu. */
+    flex: 0 0 84px;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #94a3b8;
+    word-break: break-word;
+  }
+
+  /* Değer tarafı kalan alanın tamamını alır. */
+  table.mobile-stack td > * {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  /* Etiketsiz hücreler (işlem sütunu, "kayıt yok" satırı) etiket şeridi açmasın. */
+  table.mobile-stack td:not([data-label])::before,
+  table.mobile-stack td[data-label='']::before,
+  table.mobile-stack td[colspan]::before {
+    display: none;
+  }
+
+  table.mobile-stack td[colspan] {
+    justify-content: center;
+  }
+
+  /*
+    İŞLEM SATIRI kartın altında, tam genişlikte ve ayrık.
+    Etiketin yanında sıkışınca düğmeler 60px'e düşüp okunmaz oluyordu.
+  */
+  table.mobile-stack td[data-label='İşlem'],
+  table.mobile-stack td[data-label='Islem'],
+  table.mobile-stack td[data-label='İşlemler'] {
+    margin-top: 0.375rem;
+    padding-top: 0.5rem !important;
+    border-top: 1px solid #f1f5f9 !important;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  table.mobile-stack td[data-label='İşlem']::before,
+  table.mobile-stack td[data-label='Islem']::before,
+  table.mobile-stack td[data-label='İşlemler']::before {
+    display: none;
+  }
+
+  /*
+    Masaüstü için yazılmış hücre kısıtları yığın düzeninde İŞE YARAMAZ, ZARAR VERİR:
+    `max-w-[160px]` ve `truncate` değeri gereksiz kırpıyordu.
+  */
+  table.mobile-stack td {
+    max-width: none !important;
+  }
+
+  table.mobile-stack td .truncate,
+  table.mobile-stack td.truncate {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  /*
+    İKİNCİL ALANLAR TELEFONDA GİZLİ.
+
+    Bir planlama satırı 14 alan taşıyor; hepsi basılınca kart 647px'e çıkıyor ve saha ekibi
+    listeyi tarayamıyor. Masaüstünde hepsi lazım, telefonda lazım olan dar: KİME, NEREYE,
+    NE ZAMAN, DURUM. Alan silinmiyor — `.stack-all` ile geri geliyor.
+  */
+  table.mobile-stack td[data-mobile-hide] {
+    display: none;
+  }
+
+  table.mobile-stack.stack-all td[data-mobile-hide] {
+    display: flex;
+  }
+
+  /*
+    İÇ İÇE PADDING KIRPMA.
+
+    Sayfa kabuğu (p-4) + kayıt kartı (p-4) + tablo sarmalayıcı (p-2) üst üste binince
+    320px ekranda içeriğe 250px kalıyordu. Yığın tablosunu saran kutu yanlardan inceltiliyor.
+  */
+  .overflow-x-auto:has(> table.mobile-stack),
+  div:has(> .overflow-x-auto > table.mobile-stack) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+/*
+  Çentik / gezinme çubuğu payı. `viewport-fit=cover` index.html'de zaten yazılı ama hiçbir yerde
+  karşılığı yoktu; WebView kabuğunda ve tam ekran tarayıcıda alt içerik ev düğmesinin altında
+  kalıyordu.
+*/
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/*
+  Mevcut alt boşluğun ÜSTÜNE çentik payı ekler.
+
+  `pb-safe` padding'i tamamen değiştiriyor; sayfa içeriğinin altında zaten boşluk varsa onu
+  sıfırlıyordu. Bu yardımcı ikisini toplar, o yüzden yapışkan alt çubuklarda ve tam ekran
+  pencerelerin alt kısmında bunu kullan.
+*/
+.pb-safe-add {
+  padding-bottom: calc(var(--pb-base, 0px) + env(safe-area-inset-bottom, 0px));
+}
+
+/*
+  Tam ekran yükseklik.
+
+  `100vh` mobil tarayıcıda ADRES ÇUBUĞU DAHİL yüksekliği veriyor: alt kısım ekranın dışında
+  kalıyor ve oradaki düğmelere ulaşılamıyor. `dvh` görünür alanı veriyor, klavye açılınca da
+  doğru küçülüyor. `vh` yedekte duruyor — dvh desteklemeyen eski WebView'lerde satır düşer.
+*/
+.h-screen-safe {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.min-h-screen-safe {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Yapışkan başlığın altına oturan şeritler için ortak ofset. */
+.top-header {
+  top: var(--app-header-h);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.dark body { background-color: #111827; color: #f9fafb; }
+.dark .bg-white { background-color: #1f2937 !important; }
+.dark .text-gray-900 { color: #f9fafb !important; }
+.dark .text-gray-500, .dark .text-gray-600 { color: #9ca3af !important; }
+.dark .text-gray-700 { color: #d1d5db !important; }
+.dark .border-gray-100, .dark .border-gray-200 { border-color: #374151 !important; }
+.dark .bg-gray-50, .dark .bg-gray-100 { background-color: #374151 !important; }
+.dark input, .dark select, .dark textarea { background-color: #374151 !important; color: white !important; border-color: #4b5563 !important; }
+.dark th { color: #9ca3af !important; }
+
+/* Leaflet Custom Markers */
+.custom-tech-marker {
+  background: transparent;
+  border: none;
+}
+.custom-service-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Her turlu yazi girisini otomatik olarak buyuk harf goster (Login sayfasi haric) */
+input[type="text"]:not(.login-page *), input[type="search"]:not(.login-page *), input[type="url"]:not(.login-page *), input[type="tel"]:not(.login-page *), input[type="email"]:not(.login-page *), textarea:not(.login-page *) {
+  text-transform: uppercase;
+}

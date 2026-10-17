@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    WhatsApp (ve ileride arama) asistanı — ERP'den AYRI süreç (2026-10-07 kararı).
+    ERP her paket atılışında yeniden başlıyor; açık webhook'lar ve canlı aramalar buna
+    bağlanmasın diye ayrı servis. .NET 10 (LTS, Kasım 2028'e kadar): .NET 8 Kasım 2026'da bitiyor.
+    Sunucuda ".NET 10 Hosting Bundle" kurulu olmalı.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Asistan.Api</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Yerel gizli ayar yayın çıktısına ASLA girmez; sunucudaki kendi dosyası ezilmesin, anahtar sızmasın. -->
+  <ItemGroup>
+    <Content Update="appsettings.Local.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anthropic" Version="12.54.1" />
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.15.0" />
+  </ItemGroup>
+
+</Project>

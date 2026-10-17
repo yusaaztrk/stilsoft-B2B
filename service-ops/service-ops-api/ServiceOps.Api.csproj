@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="ServiceOps.Api\**\*.cs" />
+    <Compile Remove="ServiceOps.Api\bin\**\*.cs" />
+    <Compile Remove="ServiceOps.Api\obj\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Npgsql" Version="8.0.3" />
+    <!--
+      Microsoft.IdentityModel.Tokens'ı AutoMapper 16 geçişli olarak 8.14.0'a çekiyor. Bu paket
+      kendi başına 7.0.3'te kalırsa, 7.x JwtPayload claim'leri 8.x serileştirme ilkelleriyle
+      okuyor ve "exp" SESSİZCE kayboluyor: doğru imzalanmış, süresi dolmamış HER token
+      IDX10225 "missing an Expiration Time" ile reddediliyor. İki yarı birlikte hareket etmeli.
+
+      Bu pin İÇTEKİ ServiceOps.Api/ServiceOps.Api.csproj'da vardı ama BURADA YOKTU — ve çalışan
+      süreç bu projeden derleniyor (run_services.py de burayı gösteriyor). Sonuç: B2B'den
+      ServiceOps'a oturum devri (/api/auth/exchange) her denemede 401 veriyordu.
+      İki csproj da aynı kaynağı derliyor; paket sürümleri de aynı kalmalı.
+    -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.48.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ServiceOps.Application\ServiceOps.Application.csproj" />
+    <ProjectReference Include="ServiceOps.Infrastructure\ServiceOps.Infrastructure.csproj" />
+    <ProjectReference Include="ServiceOps.Domain\ServiceOps.Domain.csproj" />
+    <ProjectReference Include="..\..\B2B.Reporting.Contracts\B2B.Reporting.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

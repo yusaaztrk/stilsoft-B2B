@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Playwright" Version="1.48.0" />
+    <!--
+      Pinned to match Microsoft.IdentityModel.Tokens, which AutoMapper 16 drags up to 8.14.0
+      transitively. Left alone, only this package stays on 7.0.3, and a 7.x JwtPayload reading
+      claims through 8.x serializer primitives silently loses "exp": every correctly signed
+      token then fails lifetime validation with IDX10225 "missing an Expiration Time".
+      Both halves must move together.
+    -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\appsettings.json" Link="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\appsettings.Development.json" Link="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceOps.Application\ServiceOps.Application.csproj" />
+    <ProjectReference Include="..\ServiceOps.Infrastructure\ServiceOps.Infrastructure.csproj" />
+    <ProjectReference Include="..\ServiceOps.Domain\ServiceOps.Domain.csproj" />
+    <ProjectReference Include="..\..\..\B2B.Reporting.Contracts\B2B.Reporting.Contracts.csproj" />
+  </ItemGroup>
+</Project>

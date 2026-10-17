@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STILSOFT - Teknolojinin Kalbi, Evinizin Ruhu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+      .material-symbols-outlined {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .fonts-loaded .material-symbols-outlined {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      (function() {
+        if ('fonts' in document) {
+          document.fonts.load('24px "Material Symbols Outlined"').then(function() {
+            document.documentElement.classList.add('fonts-loaded');
+          }).catch(function() {
+            document.documentElement.classList.add('fonts-loaded');
+          });
+        } else {
+          document.documentElement.classList.add('fonts-loaded');
+        }
+        setTimeout(function() {
+          document.documentElement.classList.add('fonts-loaded');
+        }, 1200);
+      })();
+    </script>
+  </head>
+  <body class="bg-background font-inter text-on-surface antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

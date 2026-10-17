@@ -1,0 +1,3595 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace B2B.Erp.Api.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddIrsaliyeShippedQuantity : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql(@"
+ALTER TABLE ""Irsaliye"" ADD COLUMN IF NOT EXISTS ""ShippedQuantity"" numeric(18,2);
+");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql(@"
+ALTER TABLE ""Irsaliye"" DROP COLUMN IF EXISTS ""ShippedQuantity"";
+");
+        }
+    }
+}
+
+#if false
+
+      migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 78,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 79,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 80,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 81,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 82,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 83,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 84,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 85,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 86,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 87,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 88,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 89,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 1, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 90,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 91,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 92,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 93,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 94,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 95,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 96,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 97,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 98,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 99,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 100,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 101,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 102,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 103,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 1, 12 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 104,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 105,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 106,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 107,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 108,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 109,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 110,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 111,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 112,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 113,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 114,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 115,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 116,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 117,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 1, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 118,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 119,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 120,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 121,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 122,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 123,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 124,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 125,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 126,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 127,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 128,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 129,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 130,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 131,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 1, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 132,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 133,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 134,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 135,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 136,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 137,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 138,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 139,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 140,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 141,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 142,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 143,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 144,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 145,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 1, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 146,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 147,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 148,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 149,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 150,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 151,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 152,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 153,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 154,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 155,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 156,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 157,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 158,
+                column: "PageId",
+                value: 100);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 159,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 160,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 161,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 162,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 163,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 164,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 165,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 166,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 167,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 168,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 169,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 14, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 170,
+                column: "PageId",
+                value: 15);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 171,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 18, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 172,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 173,
+                column: "PageId",
+                value: 20);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 174,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 18, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 175,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 176,
+                column: "PageId",
+                value: 20);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 177,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 18, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 178,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 179,
+                column: "PageId",
+                value: 20);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 180,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 28, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 181,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 182,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 183,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 184,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 185,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 186,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 187,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 188,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 189,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 190,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 191,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 192,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 193,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 194,
+                column: "PageId",
+                value: 42);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 195,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 28, 7 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 196,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 197,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 198,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 199,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 200,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 201,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 202,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 203,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 204,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 205,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 206,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 207,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 208,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 209,
+                column: "PageId",
+                value: 42);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 210,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 28, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 211,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 212,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 213,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 214,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 215,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 216,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 217,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 218,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 219,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 220,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 221,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 222,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 223,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 224,
+                column: "PageId",
+                value: 42);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 225,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 28, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 226,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 227,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 228,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 229,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 230,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 231,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 232,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 233,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 234,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 235,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 236,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 237,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 238,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 239,
+                column: "PageId",
+                value: 42);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 240,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 28, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 241,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 242,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 243,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 244,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 245,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 246,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 247,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 248,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 249,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 250,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 251,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 252,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 253,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 254,
+                column: "PageId",
+                value: 42);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 255,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 256,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 257,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 258,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 259,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 260,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 261,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 262,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 263,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 264,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 265,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 266,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 267,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 4 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 268,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 269,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 270,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 271,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 272,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 273,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 274,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 275,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 276,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 277,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 278,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 279,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 5 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 280,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 281,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 282,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 283,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 11 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 284,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 285,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 286,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 287,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 24, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 288,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 289,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 290,
+                column: "PageId",
+                value: 27);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 291,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 292,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 293,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 294,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 295,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 296,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 297,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 298,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 299,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 300,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 301,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 16, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 302,
+                column: "PageId",
+                value: 17);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 303,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 43, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 304,
+                column: "PageId",
+                value: 44);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 305,
+                column: "PageId",
+                value: 45);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 306,
+                column: "PageId",
+                value: 46);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 307,
+                column: "PageId",
+                value: 47);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 308,
+                column: "PageId",
+                value: 48);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 309,
+                column: "PageId",
+                value: 49);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 310,
+                column: "PageId",
+                value: 50);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 311,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 43, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 312,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 44, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 313,
+                column: "PageId",
+                value: 45);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 314,
+                column: "PageId",
+                value: 46);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 315,
+                column: "PageId",
+                value: 47);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 316,
+                column: "PageId",
+                value: 48);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 317,
+                column: "PageId",
+                value: 49);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 318,
+                column: "PageId",
+                value: 50);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "ShippedQuantity",
+                table: "Irsaliye");
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 52,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 200, 1 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 53,
+                column: "PageId",
+                value: 21);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 54,
+                column: "PageId",
+                value: 22);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 55,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 23, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 56,
+                column: "PageId",
+                value: 21);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 57,
+                column: "PageId",
+                value: 22);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 58,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 23, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 59,
+                column: "PageId",
+                value: 21);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 60,
+                column: "PageId",
+                value: 22);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 61,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 23, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 62,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 63,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 64,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 65,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 66,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 67,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 68,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 69,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 70,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 71,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 72,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 73,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 74,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 75,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 76,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 77,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 78,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 79,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 80,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 81,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 82,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 83,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 84,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 85,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 86,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 87,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 88,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 89,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 90,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 91,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 92,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 93,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 94,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 95,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 96,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 97,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 98,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 99,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 100,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 101,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 102,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 103,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 104,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 105,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 106,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 107,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 108,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 109,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 110,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 111,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 112,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 113,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 114,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 115,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 116,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 117,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 12 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 118,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 119,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 120,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 121,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 122,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 123,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 124,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 125,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 126,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 127,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 128,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 129,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 130,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 131,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 132,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 133,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 134,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 135,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 136,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 137,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 138,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 139,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 140,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 141,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 142,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 143,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 144,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 145,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 146,
+                column: "PageId",
+                value: 1);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 147,
+                column: "PageId",
+                value: 2);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 148,
+                column: "PageId",
+                value: 3);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 149,
+                column: "PageId",
+                value: 4);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 150,
+                column: "PageId",
+                value: 5);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 151,
+                column: "PageId",
+                value: 6);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 152,
+                column: "PageId",
+                value: 7);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 153,
+                column: "PageId",
+                value: 8);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 154,
+                column: "PageId",
+                value: 9);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 155,
+                column: "PageId",
+                value: 10);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 156,
+                column: "PageId",
+                value: 11);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 157,
+                column: "PageId",
+                value: 12);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 158,
+                column: "PageId",
+                value: 13);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 159,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 100, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 160,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 161,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 162,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 163,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 164,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 165,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 166,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 167,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 168,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 169,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 170,
+                column: "PageId",
+                value: 14);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 171,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 15, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 172,
+                column: "PageId",
+                value: 18);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 173,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 174,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 20, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 175,
+                column: "PageId",
+                value: 18);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 176,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 177,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 20, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 178,
+                column: "PageId",
+                value: 18);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 179,
+                column: "PageId",
+                value: 19);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 180,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 20, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 181,
+                column: "PageId",
+                value: 28);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 182,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 183,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 184,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 185,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 186,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 187,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 188,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 189,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 190,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 191,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 192,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 193,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 194,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 195,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 42, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 196,
+                column: "PageId",
+                value: 28);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 197,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 198,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 199,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 200,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 201,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 202,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 203,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 204,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 205,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 206,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 207,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 208,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 209,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 210,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 42, 7 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 211,
+                column: "PageId",
+                value: 28);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 212,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 213,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 214,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 215,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 216,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 217,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 218,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 219,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 220,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 221,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 222,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 223,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 224,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 225,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 42, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 226,
+                column: "PageId",
+                value: 28);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 227,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 228,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 229,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 230,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 231,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 232,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 233,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 234,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 235,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 236,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 237,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 238,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 239,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 240,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 42, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 241,
+                column: "PageId",
+                value: 28);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 242,
+                column: "PageId",
+                value: 29);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 243,
+                column: "PageId",
+                value: 30);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 244,
+                column: "PageId",
+                value: 31);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 245,
+                column: "PageId",
+                value: 32);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 246,
+                column: "PageId",
+                value: 33);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 247,
+                column: "PageId",
+                value: 34);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 248,
+                column: "PageId",
+                value: 35);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 249,
+                column: "PageId",
+                value: 36);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 250,
+                column: "PageId",
+                value: 37);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 251,
+                column: "PageId",
+                value: 38);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 252,
+                column: "PageId",
+                value: 39);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 253,
+                column: "PageId",
+                value: 40);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 254,
+                column: "PageId",
+                value: 41);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 255,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 42, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 256,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 257,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 258,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 259,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 260,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 261,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 262,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 263,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 264,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 265,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 266,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 267,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 268,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 269,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 270,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 271,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 4 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 272,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 273,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 274,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 275,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 276,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 277,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 278,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 279,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 280,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 281,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 282,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 283,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 5 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 284,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 285,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 286,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 287,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 11 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 288,
+                column: "PageId",
+                value: 24);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 289,
+                column: "PageId",
+                value: 25);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 290,
+                column: "PageId",
+                value: 26);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 291,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 27, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 292,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 293,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 294,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 295,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 9 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 296,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 297,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 8 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 298,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 299,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 3 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 300,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 301,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 10 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 302,
+                column: "PageId",
+                value: 16);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 303,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 17, 2 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 304,
+                column: "PageId",
+                value: 43);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 305,
+                column: "PageId",
+                value: 44);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 306,
+                column: "PageId",
+                value: 45);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 307,
+                column: "PageId",
+                value: 46);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 308,
+                column: "PageId",
+                value: 47);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 309,
+                column: "PageId",
+                value: 48);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 310,
+                column: "PageId",
+                value: 49);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 311,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 50, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 312,
+                columns: new[] { "PageId", "RoleId" },
+                values: new object[] { 200, 6 });
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 313,
+                column: "PageId",
+                value: 43);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 314,
+                column: "PageId",
+                value: 44);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 315,
+                column: "PageId",
+                value: 45);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 316,
+                column: "PageId",
+                value: 46);
+
+            migrationBuilder.UpdateData(
+                table: "RolePagePermissions",
+                keyColumn: "Id",
+                keyValue: 317,
+}
+
+protected override void Down(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.Sql(@"
+ALTER TABLE ""Irsaliye"" DROP COLUMN IF EXISTS ""ShippedQuantity"";
+");
+}
+
+#endif

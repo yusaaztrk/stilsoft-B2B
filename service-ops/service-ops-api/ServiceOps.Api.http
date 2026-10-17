@@ -1,0 +1,6 @@
+@ServiceOps.Api_HostAddress = http://localhost:5137
+
+GET {{ServiceOps.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

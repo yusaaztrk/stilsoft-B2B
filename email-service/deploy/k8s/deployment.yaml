@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-service
+  namespace: b2b-erp
+  labels:
+    app: email-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: email-service
+  template:
+    metadata:
+      labels:
+        app: email-service
+    spec:
+      containers:
+      - name: email-service
+        image: b2b-erp/email-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+        env:
+        # Load from ConfigMap
+        - name: ASPNETCORE_ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: email-service-config
+              key: ASPNETCORE_ENVIRONMENT
+        - name: RabbitMq__Host
+          valueFrom:
+            configMapKeyRef:
+              name: email-service-config
+              key: RabbitMq__Host
+        - name: RabbitMq__Port
+          valueFrom:
+            configMapKeyRef:
+              name: email-service-config
+              key: RabbitMq__Port
+        - name: RabbitMq__Username
+          valueFrom:
+            configMapKeyRef:
+              name: email-service-config
+              key: RabbitMq__Username
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: email-service-config
+              key: OTEL_EXPORTER_OTLP_ENDPOINT
+              
+        # Load from Secrets
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: email-service-secrets
+              key: ConnectionStrings__DefaultConnection
+        - name: RabbitMq__Password
+          valueFrom:
+            secretKeyRef:
+              name: email-service-secrets
+              key: RabbitMq__Password
+        - name: Encryption__SecretKey
+          valueFrom:
+            secretKeyRef:
+              name: email-service-secrets
+              key: Encryption__SecretKey
+        - name: Authentication__ApiKey
+          valueFrom:
+            secretKeyRef:
+              name: email-service-secrets
+              key: Authentication__ApiKey
+
+        # Health Probes
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
